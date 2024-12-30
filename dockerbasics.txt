@@ -1,0 +1,98 @@
+Let's say ......
+
+Team is working on Data Science application
+
+Dev A works in Windows env where you install multiple dependancies
+
+Dev B works in Linux / Mac env where he/she installs multiple dependencies
+
+because of some dependancy mismatch, Dev A and Dev B are unable to 
+run the code in their respective envs
+
+Now Developer team somehow created a project and now they want to share it with testing team (QA)
+Say they will be testing on QA server which needs those dependancies
+
+Say QA folks missed some configurations, then some modules/apps may not work and can cause trouble
+No testing in process, Devs say everything working well in their envs
+
+This issue can be fixed with Containers 
+
+Containers is a way to package applications with all the required dependancies,
+and configurations , so that it can be run on any env (Windows, Linux, Mac)
+
+
+Container is a portable artifact.
+It can be easily shared/shipped/moved into any env.
+
+This makes the development and deployment process more efficient and easier to manage.
+
+
+--------------------------------------------------------------------------------------------------
+
+To convert an app into container , we create multiple layers of images
+
+The base image will be one linux image 
+Say you can add one layer of mongo db image
+another image layer is python 3.10
+and so on ........
+
+All these layers of images together form a "Docker Image"
+
+When you take this Docker Image and run it, it will then create a container (env)
+Within this container (env) it will run the application
+
+----------------------------------------------------------------------------------------
+
+Docker Image is a package or artifact which can be moved or shipped or shared in envs
+
+
+
+
+Docker Images when ran, it starts the application and create container
+
+
+Docker image -> run -> create container
+
+
+---------------------------------------------------------------------------------------------
+
+Dockers and VMS :
+Both are performing virtualization.
+
+
+-----------------OS STACK----------------------------------
+
+APPLICATION LAYER 
+------------------------------------------------------
+OS KERNEL (reponsible in communicating with hardware)
+------------------------------------------------------
+HARDWARE
+-------------------------------------------------------------
+
+
+With most OS , changes happen on UI layer.
+
+Now when we use DOCKER or VM which layer it will virtualize ?
+
+Docker will virtualize APPLICATION LAYER of the OS.
+Which means docker images are able to communicate with OS KERNEL
+
+In VMs, VM virtualize Application layer and OS KERNEL layer.
+Which means VM will have its own Application layer and KERNEL layer.
+
+And that is the reason when you install VMs you need to assign some level of resources locally 
+like RAM etc.
+-------------------------------------------------------------------------------------
+Docker image size is SMALLER. (important)
+Docker containers start and run much faster than VMs.
+Since it only has to start the application layer and not the OS layer.
+Sometimes docker has compatibiltiy issue.
+(In windows version less than 10, docker did not support linux images)
+
+VM size is BIGGER.
+VM is comparitively slower.
+We can install VM on ANY OS. (no compatibiltiy issue)
+
+--------------------------------------------------------------------------------------------
+
+
